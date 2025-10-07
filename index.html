@@ -15,74 +15,21 @@
 </head>
 <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 
-    <!-- Header & Navigation -->
-    <header class="bg-white shadow-md fixed w-full top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-gray-800">
-                GlobeTrail
-            </a>
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="index.html" class="text-gray-600 hover:text-blue-500 transition duration-300">Home</a>
-                <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">Destinations</a>
-                <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">About Us</a>
-                <a href="#" class="text-gray-600 hover:text-blue-500 transition duration-300">Contact</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden flex items-center">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
-            <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Destinations</a>
-            <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">About Us</a>
-            <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
-        </div>
-    </header>
+    <!-- Header will be loaded here -->
+    <header id="header-placeholder"></header>
 
     <!-- Main Content Wrapper -->
     <div class="flex-grow">
-        <!-- Hero Section -->
-        <section class="hero-bg h-screen flex items-center justify-center text-white">
-            <div class="bg-black bg-opacity-50 p-8 md:p-12 rounded-lg text-center max-w-3xl mx-auto">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Your Journey Begins Here</h1>
-                <p class="text-lg md:text-2xl mb-8">One stop for all your trip planning & booking.</p>
-                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105">
-                    Plan Your Trip
-                </a>
-            </div>
-        </section>
+        <!-- Hero Section will be loaded here -->
+        <section id="hero-placeholder"></section>
 
         <!-- Page Content -->
         <main class="container mx-auto px-6 py-16">
-            <!-- Popular Destinations Section -->
+            <!-- Popular Destinations Section (Data from Firestore) -->
             <section id="destinations" class="mb-16">
                 <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Popular Destinations</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Destination Card 1: Paris -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760c0341?q=80&w=2070&auto=format&fit=crop" alt="Eiffel Tower in Paris" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Paris, France</h3>
-                            <p class="text-gray-600">Experience the city of lights, art, and romance.</p>
-                        </div>
-                    </div>
-                    <!-- Destination Card 2: Kyoto -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                        <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?q=80&w=2070&auto=format&fit=crop" alt="Temples in Kyoto" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Kyoto, Japan</h3>
-                            <p class="text-gray-600">Discover ancient temples and serene gardens.</p>
-                        </div>
-                    </div>
-                    <!-- Destination Card 3: Santorini -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                        <img src="https://images.unsplash.com/photo-1533105079780-52b9be4ac20c?q=80&w=2070&auto=format&fit=crop" alt="White buildings in Santorini" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2">Santorini, Greece</h3>
-                            <p class="text-gray-600">Witness breathtaking sunsets over the Aegean Sea.</p>
-                        </div>
-                    </div>
+                <div id="destinations-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Destinations will be loaded here by JS -->
                 </div>
             </section>
             
@@ -119,51 +66,17 @@
         </main>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- About Column -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4">GlobeTrail</h3>
-                    <p class="text-gray-400">One stop for all your trip planning & booking. We help you discover the world, one adventure at a time.</p>
-                </div>
-                <!-- Quick Links Column -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Destinations</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- Legal Column -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Legal</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <!-- Social Media Column -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
-                <p>&copy; 2025 GlobeTrail Travels Pvt Ltd. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer will be loaded here -->
+    <footer id="footer-placeholder"></footer>
 
-    <!-- Custom JS -->
+    <!-- Firebase SDK Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    
+    <!-- Our Firebase Config -->
+    <script src="assets/js/firebase-config.js"></script>
+
+    <!-- Main JS (must be last) -->
     <script src="assets/js/main.js"></script>
 
 </body>
